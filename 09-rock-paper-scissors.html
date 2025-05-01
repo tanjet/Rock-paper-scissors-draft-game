@@ -24,7 +24,8 @@
     "
     ">
         Scissors</button>
-
+      <p class="js-result"></p>
+      <p class="js-moves"></p>
         <p class='js-score'></p>
         <button onclick="
         score.wins=0;
@@ -118,10 +119,13 @@ ties: ${score.ties}`;
       }
       localStorage.setItem('score',JSON.stringify(score));
       updateGameScore();
-      alert(`computer picked:  ${computerMove} and you picked ${playerMove}. ${gameResult} \n Wins : ${score.wins},
-Losses: ${score.losses},
-ties: ${score.ties}
-      `);
+      document.querySelector('.js-result').innerHTML=gameResult;
+      document.querySelector('.js-moves').innerHTML=`You ${playerMove} vs Computer ${computerMove}`;
+      //alert(`computer picked:  ${computerMove} and you picked ${playerMove}. ${gameResult}`);
+      //alert(`computer picked:  ${computerMove} and you picked ${playerMove}. ${gameResult} \n Wins : ${score.wins},
+//Losses: ${score.losses},//
+//ties: ${score.ties}//
+      //`);
     }
 
 
